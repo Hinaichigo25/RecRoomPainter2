@@ -1,0 +1,158 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:colorpicker="clr-namespace:AvaloniaColorPicker;assembly=AvaloniaColorPicker"
+        mc:Ignorable="d" d:DesignWidth="700" d:DesignHeight="750"
+        x:Class="RecRoomPainter2.MainWindow"
+        Title="Rec Room Painter"
+        MinHeight="750"
+        MinWidth="700">
+
+ 
+    <Grid RowDefinitions="*,Auto" Margin="10">
+        <Grid ColumnDefinitions="Auto, 4, *" Grid.Row="0">
+            <Grid RowDefinitions="Auto, * Auto">
+                <StackPanel Grid.Row="0">
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Button Grid.Column="0" Name="LoadButton" Click="LoadButton_OnClick">Load Image</Button>
+                        <Button Grid.Column="1">Clear</Button>
+                    </Grid>
+
+                    <Grid ColumnDefinitions="*,*">
+                        <StackPanel Grid.Column="0">
+                            <Button>Set Draw Location</Button>
+                            <Expander Margin="5,-5,5,0">
+                                <Expander.Header>
+                                    Draw Settings
+                                </Expander.Header>
+                                <Grid ColumnDefinitions="Auto,Auto, 7, Auto, Auto" RowDefinitions="Auto,3,Auto">
+                                    <TextBox Grid.Row="0" Grid.Column="0" MinWidth="50" />
+                                    <Label Grid.Row="0" Grid.Column="1" VerticalContentAlignment="Center">X</Label>
+
+                                    <TextBox Grid.Row="2" Grid.Column="0" MinWidth="50" />
+                                    <Label Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Center">Y</Label>
+
+                                    <TextBox Grid.Row="0" Grid.Column="3" MinWidth="50" />
+                                    <Label Grid.Row="0" Grid.Column="4" VerticalContentAlignment="Center">W</Label>
+
+                                    <TextBox Grid.Row="2" Grid.Column="3" MinWidth="50" />
+                                    <Label Grid.Row="2" Grid.Column="4" VerticalContentAlignment="Center">H</Label>
+                                </Grid>
+
+                            </Expander>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+                            <Grid ColumnDefinitions="*,40">
+                                <Button Grid.Column="0" Margin="5,5,1,5">Set Crop</Button>
+                                <Button Grid.Column="1" Margin="1,5,5,5" />
+                            </Grid>
+                            <Expander Margin="5,-5,5,0">
+                                <Expander.Header>
+
+                                    Crop Settings
+                                </Expander.Header>
+                                <Grid ColumnDefinitions="Auto,Auto, 7, Auto, Auto" RowDefinitions="Auto,3,Auto">
+                                    <TextBox Grid.Row="0" Grid.Column="0" MinWidth="50" />
+                                    <Label Grid.Row="0" Grid.Column="1" VerticalContentAlignment="Center">X</Label>
+
+                                    <TextBox Grid.Row="2" Grid.Column="0" MinWidth="50" />
+                                    <Label Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Center">Y</Label>
+
+                                    <TextBox Grid.Row="0" Grid.Column="3" MinWidth="50" />
+                                    <Label Grid.Row="0" Grid.Column="4" VerticalContentAlignment="Center">W</Label>
+
+                                    <TextBox Grid.Row="2" Grid.Column="3" MinWidth="50" />
+                                    <Label Grid.Row="2" Grid.Column="4" VerticalContentAlignment="Center">H</Label>
+                                </Grid>
+
+                            </Expander>
+                        </StackPanel>
+                    </Grid>
+
+                    <StackPanel Orientation="Horizontal" />
+
+
+                </StackPanel>
+                <StackPanel Grid.Row="2">
+                <Grid ColumnDefinitions="Auto,Auto,*" >
+                    <Border Classes="ToolBoarder" Grid.Column="0">
+                        <StackPanel VerticalAlignment="Center" Spacing="7">
+                            <Label>Pen Size</Label>
+                            <TextBox HorizontalContentAlignment="Center" MinWidth="40" Width="40">3</TextBox>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Classes="ToolBoarder" Grid.Column="1">
+                        <StackPanel Margin="2,0,0,-5" Spacing="7">
+                            <Label>Draw Mode</Label>
+                            <StackPanel Orientation="Vertical">
+                                <RadioButton Content="Paint" FontSize="12" />
+                                <RadioButton Content="Line" FontSize="12" Margin="0,3,0,0" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Classes="ToolBoarder" Grid.Column="2">
+                        <StackPanel>
+                            <Label>Pixelation</Label>
+                            <Grid ColumnDefinitions="*,Auto" Margin="0,0,10,0">
+                                <Slider Grid.Column="0" Margin="10,0,15,0" />
+                                <TextBox Grid.Column="1" MinWidth="40" Width="40" MinHeight="30" Height="30">1</TextBox>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                    <Border Classes="ToolBoarder">
+                        <Grid ColumnDefinitions="Auto,Auto,Auto,Auto">
+                            <StackPanel Grid.Column="0" Margin="5" Spacing="7">
+                                <Label>Max Colors</Label>
+                                <TextBox MinWidth="50" Width="50">16</TextBox>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Margin="5" Spacing="7">
+                                <Label>Fill First Layer</Label>
+                                <CheckBox HorizontalAlignment="Center" />
+                            </StackPanel>
+                            <StackPanel Grid.Column="2" Margin="5" Spacing="7">
+                                <Label>Dither Pattern</Label>
+                                <ComboBox MinWidth="150">
+                                    <ComboBoxItem>None</ComboBoxItem>
+                                </ComboBox>
+                            </StackPanel>
+                            <StackPanel Grid.Column="3" Margin="5" Spacing="7">
+                                <Label>Noise Reduction</Label>
+                                <TextBox MinWidth="40" Width="40">0</TextBox>
+                            </StackPanel>
+
+
+                        </Grid>
+                    </Border>
+
+                    <Grid ColumnDefinitions="Auto,*">
+                        <Rectangle Width="300" Height="250" Fill="Black"></Rectangle>
+                        <Rectangle Width="290" Height="240" Fill="#474747"></Rectangle>
+                        <WrapPanel> </WrapPanel>
+                        <colorpicker:ColorCanvasControls Grid.Column="1" IsAlphaVisible="False" />
+                    </Grid>
+
+                    <Grid ColumnDefinitions="30*,60*">
+                        <Button Grid.Column="0">Estimate Draw Time</Button>
+                        <Button Grid.Column="1">Draw Picture</Button>
+                    </Grid>
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Estimated Time: </Label>
+                        <Label>D00:H00:M00:S00</Label>
+                    </StackPanel>
+                </StackPanel>
+
+
+            </Grid>
+            <Grid Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="#666666">
+                <Image Source="C:\MyStuff\Programming\C#\RecRoomPainter2\testimage.jpg" Margin="10" Stretch="Uniform"
+                       VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+            </Grid>
+
+        </Grid>
+        <ProgressBar Name="ProgressBarMain" Value="50" Margin="5" Grid.Row="1" />
+    </Grid>
+</Window>

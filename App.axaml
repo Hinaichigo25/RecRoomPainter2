@@ -1,0 +1,57 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="RecRoomPainter2.App"
+             RequestedThemeVariant="Default">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+     <Application.Resources>
+         <FontFamily x:Key="DMMono">avares://RecRoomPainter2/Font/#DM Mono</FontFamily>
+ 
+     </Application.Resources>
+             
+    <Application.Styles>
+        <SimpleTheme/>
+        <Style Selector="Button">
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Stretch" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Padding" Value="6" />
+            <Setter Property="Margin" Value="6" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontWeight" Value="Light" />
+            <Setter Property="FontFamily" Value="{StaticResource DMMono}" />
+            <Setter Property="CornerRadius" Value="5" />
+
+        </Style>
+
+        <Style Selector="Expander">
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="Margin" Value="10,-5,10,10" />
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="FontFamily" Value="{StaticResource DMMono}" />
+        </Style>
+
+        <Style Selector="Label">
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontFamily" Value="{StaticResource DMMono}" />
+        </Style>
+
+        <Style Selector="TextBox">
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="{StaticResource DMMono}" />
+            <Setter Property="CornerRadius" Value="3" />
+            <Setter Property="MinHeight" Value="30" />
+            <Setter Property="Height" Value="30" />
+        </Style>
+
+        <Style Selector="Border.ToolBoarder">
+            <Setter Property="BorderThickness" Value="3" />
+            <Setter Property="Padding" Value="2" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+    </Application.Styles>
+</Application>
